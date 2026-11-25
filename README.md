@@ -108,3 +108,12 @@ Cada ejecución crea `resultados/cli/ejecucion_NNN/` sin sobrescribir anteriores
 - `requirements.txt`: dependencias de Python.
 
 Los pesos, entornos virtuales, corpus reales y resultados generados se excluyen mediante `.gitignore`.
+
+## Autor y contacto
+
+**Luis Mazuca**
+
+Universidad de Guanajuato  
+Campus Irapuato-Salamanca
+
+Correo: [mazucavazquezluisfernando@gmail.com](mailto:mazucavazquezluisfernando@gmail.com)
