@@ -114,6 +114,7 @@ Los pesos, entornos virtuales, corpus reales y resultados generados se excluyen 
 **Luis Mazuca**
 
 Universidad de Guanajuato  
-Campus Irapuato-Salamanca
+Campus Irapuato-Salamanca  
+Licenciatura en Ingeniería de Datos e Inteligencia Artificial
 
 Correo: [mazucavazquezluisfernando@gmail.com](mailto:mazucavazquezluisfernando@gmail.com)
