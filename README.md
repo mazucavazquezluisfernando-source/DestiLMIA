@@ -154,21 +154,17 @@ deactivate
 
 ## Cómo funciona el análisis
 
-DestiLMIA utiliza distintas herramientas de procesamiento del lenguaje natural para estudiar los comentarios y comparar la información procedente de las fuentes oficiales y de los visitantes.
+El análisis comienza con la preparación de los comentarios. **Lingua** me ayuda a identificar el idioma y **spaCy** a limpiar y organizar los textos. Con **MiniLM** obtengo una representación de su significado para encontrar semejanzas entre comentarios, incluso cuando utilizan palabras distintas.
 
-1. **Preparación de textos:** utiliza Lingua y spaCy para reconocer el idioma, limpiar los comentarios y organizar las palabras antes de analizarlas.
+También reviso los comentarios que se alejan del conjunto. Los identifico comparándolos con documentos cercanos y aplicando un criterio basado en **MAD**. Después examino sus palabras y expresiones más frecuentes.
 
-2. **Embeddings:** emplea MiniLM para representar el significado de los comentarios y encontrar relaciones entre textos que hablan de asuntos similares.
+Para estudiar los sentimientos empleo **XLM-RoBERTa**, que clasifica las opiniones como positivas, negativas o neutrales. En el análisis de tópicos por sentimiento también utilizo una tendencia binaria, positiva o negativa.
 
-3. **Comentarios atípicos:** identifica publicaciones que se diferencian del resto mediante la comparación con documentos cercanos y un criterio basado en MAD. También estudia sus palabras y expresiones frecuentes.
+Los temas se identifican agrupando comentarios relacionados mediante **UMAP** y **Leiden**. En grupos pequeños, el programa recurre a frecuencias de palabras.
 
-4. **Sentimientos:** utiliza XLM-RoBERTa para clasificar los comentarios como positivos, negativos o neutrales. Además, obtiene una tendencia binaria para estudiar los tópicos por sentimiento.
+La comparación entre la **DMO y los usuarios** reúne los temas y sentimientos de ambas fuentes. La **similitud coseno** permite medir qué tan cercanos son sus contenidos.
 
-5. **Tópicos:** mediante UMAP y Leiden, encuentra grupos de comentarios relacionados e identifica los temas presentes en cada conjunto. Cuando hay pocos documentos, utiliza frecuencias de palabras como alternativa.
-
-6. **Comparación DMO vs. usuarios:** analiza las coincidencias y diferencias entre los temas, sentimientos y contenidos de las distintas fuentes. Utiliza similitud coseno para calcular su cercanía semántica.
-
-7. **Precio y valor:** identifica comentarios relacionados con los costos, el valor de la experiencia y la relación calidad-precio. Utiliza frases de referencia y similitud semántica para encontrar los textos más cercanos a estos conceptos.
+Por último, el apartado de **precio y valor** busca referencias a costos, valor de la experiencia y relación calidad-precio mediante frases de referencia y similitud semántica.
 
 ## Visualización de resultados
 
