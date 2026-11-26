@@ -154,17 +154,11 @@ deactivate
 
 ## Cómo funciona el análisis
 
-El análisis comienza con la preparación de los comentarios. **Lingua** me ayuda a identificar el idioma y **spaCy** a limpiar y organizar los textos. Con **MiniLM** obtengo una representación de su significado para encontrar semejanzas entre comentarios, incluso cuando utilizan palabras distintas.
+La metodología de DestiLMIA comienza con la preparación de los comentarios. Para esta etapa se emplean **Lingua** y **spaCy**, que ayudan a identificar el idioma y procesar los textos. Después, **MiniLM** genera representaciones semánticas con las que es posible comparar comentarios que expresan ideas similares, aunque estén escritos de manera diferente. Estas representaciones sirven además para detectar documentos atípicos mediante la comparación con vecinos cercanos y el criterio estadístico **MAD**. Una vez identificados, se analizan sus palabras y expresiones frecuentes.
 
-También reviso los comentarios que se alejan del conjunto. Los identifico comparándolos con documentos cercanos y aplicando un criterio basado en **MAD**. Después examino sus palabras y expresiones más frecuentes.
+El análisis de sentimientos se realiza con **XLM-RoBERTa**, que permite clasificar los comentarios como positivos, negativos o neutrales. Para encontrar los temas más recurrentes se emplean **UMAP** y **Leiden**, agrupando publicaciones que comparten características semánticas. A partir de estos grupos se identifican palabras clave y comentarios representativos. El programa estudia los tópicos según su tendencia positiva o negativa y utiliza frecuencias de palabras cuando trabaja con conjuntos pequeños de documentos.
 
-Para estudiar los sentimientos empleo **XLM-RoBERTa**, que clasifica las opiniones como positivas, negativas o neutrales. En el análisis de tópicos por sentimiento también utilizo una tendencia binaria, positiva o negativa.
-
-Los temas se identifican agrupando comentarios relacionados mediante **UMAP** y **Leiden**. En grupos pequeños, el programa recurre a frecuencias de palabras.
-
-La comparación entre la **DMO y los usuarios** reúne los temas y sentimientos de ambas fuentes. La **similitud coseno** permite medir qué tan cercanos son sus contenidos.
-
-Por último, el apartado de **precio y valor** busca referencias a costos, valor de la experiencia y relación calidad-precio mediante frases de referencia y similitud semántica.
+Con esta información se comparan los contenidos publicados por la **DMO** y las opiniones de los usuarios, considerando los temas identificados, la distribución de sentimientos y la cercanía semántica calculada mediante **similitud coseno**. El análisis se complementa con un apartado dedicado al **precio y valor de las experiencias turísticas**, donde se utilizan frases de referencia y similitud semántica para localizar comentarios relacionados con costos, valor percibido y relación calidad-precio.
 
 ## Visualización de resultados
 
