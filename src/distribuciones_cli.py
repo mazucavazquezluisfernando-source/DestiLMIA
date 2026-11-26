@@ -3,6 +3,7 @@ from html import escape
 
 import plotly.express as px
 import plotly.io as pio
+import plotly.graph_objects as go
 from src.scatter_comentarios_cli import PALETAS
 
 
@@ -36,27 +37,106 @@ def generar_distribuciones(
 
     figuras = []
 
-    for columna, encabezado in [
-        ("Topico", "Distribucion de topicos"),
-        ("Sentimiento", "Distribucion de sentimientos originales"),
-        ("Polaridad binaria", "Distribucion de polaridad binaria")
-    ]:
-        figura = px.histogram(
-            base,
-            x="Universo",
-            color=columna,
-            barmode="stack",
-            color_discrete_sequence=PALETAS[paleta],
-            title=encabezado
+    colores_sentimiento = dict(zip(
+        ["negativo", "neutral", "positivo"],
+        px.colors.sample_colorscale(
+            PALETAS[paleta], [0.10, 0.40, 0.72]
         )
+    ))
+
+    for columna, encabezado in [
+        ("Topico", "Distribución de tópicos"),
+        ("Sentimiento", "Distribución de sentimientos originales"),
+        ("Polaridad binaria", "Distribución de polaridad binaria")
+    ]:
+
+        if columna == "Topico":
+            categorias = sorted(
+                base[columna].unique(),
+                key=lambda nombre: (
+                    not nombre.startswith("Topico "),
+                    int(nombre.split()[-1])
+                    if nombre.startswith("Topico ") else 0
+                )
+            )
+
+            cantidad = len(categorias)
+
+            posiciones = [
+                0.10 + 0.72 * i / (cantidad - 1)
+                for i in range(cantidad)
+            ] if cantidad > 1 else [0.40]
+
+            colores = dict(zip(
+                categorias,
+                px.colors.sample_colorscale(
+                    PALETAS[paleta], posiciones
+                )
+            ))
+
+        else:
+            categorias = (
+                ["negativo", "neutral", "positivo"]
+                if columna == "Sentimiento"
+                else ["negativo", "positivo"]
+            )
+
+            colores = colores_sentimiento
+
+        if not set(base[columna]).issubset(categorias):
+            raise ValueError("Categorías no reconocidas")
+
+        conteos = (
+            base.groupby(["Universo", columna])
+            .size()
+            .unstack(fill_value=0)
+            .reindex(columns=categorias, fill_value=0)
+        )
+
+        universos = [
+            grupo for grupo in ["DMO", "Usuarios"]
+            if grupo in conteos.index
+        ]
+
+        conteos = conteos.loc[universos]
+        porcentajes = conteos.div(conteos.sum(axis=1), axis=0) * 100
+
+        figura = go.Figure()
+
+        for categoria in categorias:
+            valores = porcentajes[categoria].tolist()
+
+            figura.add_bar(
+                name=categoria,
+                x=universos,
+                y=valores,
+                customdata=conteos[categoria].tolist(),
+                marker=dict(color=colores[categoria]),
+                text=[
+                    f"{valor:.1f}%" if valor >= 6 else ""
+                    for valor in valores
+                ],
+                textposition="inside",
+                insidetextanchor="middle",
+                hovertemplate=(
+                    "%{x}<br>"
+                    "%{y:.1f}%<br>"
+                    "%{customdata} documentos"
+                    "<extra>%{fullData.name}</extra>"
+                )
+            )
 
         figura.update_layout(
-            barnorm="percent",
+            title=encabezado,
+            barmode="stack",
             yaxis_title="Porcentaje de comentarios",
-            xaxis_title="Tipo de imagen"
+            xaxis_title="Grupo analizado",
+            legend_title_text=columna,
+            uniformtext_minsize=10,
+            uniformtext_mode="hide"
         )
 
-        figura.update_yaxes(range=[0, 100])
+        figura.update_yaxes(range=[0, 100], ticksuffix="%")
         figuras.append(figura)
 
     pagina = (
