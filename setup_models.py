@@ -1,3 +1,4 @@
+# Prepara los modelos necesarios para utilizar DestiLMIA.
 import subprocess
 import sys
 
