@@ -4,15 +4,13 @@ Análisis comparativo de la imagen turística proyectada por una DMO y la imagen
 
 ## Sobre el proyecto
 
-La idea de este proyecto surge de comparar la manera en que un destino turístico se promociona con lo que las personas realmente comentan sobre él.
+Desarrollé DestiLMIA para comparar la imagen turística que comunican las organizaciones de promoción de destinos (DMO) con las opiniones que los visitantes comparten en plataformas de reseñas y comunidades digitales.
 
-Una DMO (Destination Management Organization) puede destacar ciertos lugares, actividades o experiencias de un destino, pero esto no significa que los visitantes tengan necesariamente la misma percepción.
+El programa permite identificar los temas principales, analizar sentimientos, reconocer comentarios poco habituales y encontrar diferencias entre la comunicación oficial y las experiencias compartidas por los usuarios. También incorpora un análisis específico de cómo se habla del precio y el valor de las experiencias turísticas.
 
-Con DestiLMIA busco analizar ambas perspectivas a partir de textos provenientes de distintas fuentes. Me interesa conocer qué temas tienen en común, cuáles son sus diferencias, qué sentimientos expresan los usuarios y cómo hablan sobre los precios y el valor de sus experiencias.
+Para facilitar su uso, desarrollé una interfaz interactiva con Streamlit que permite consultar los resultados mediante gráficas, tablas y comentarios representativos.
 
-Para trabajar con estos datos utilicé herramientas de procesamiento del lenguaje natural, aprendizaje automático y visualización de la información.
-
-Desarrollé el proyecto en Python y agregué una interfaz en Streamlit para facilitar la exploración de los resultados. También es posible realizar todo el análisis directamente desde la terminal.
+Mi propósito es ofrecer una herramienta que facilite la exploración y comparación de estas perspectivas, permitiendo comprender mejor la información y reconocer los aspectos que tienen mayor presencia en cada fuente.
 
 ## Instalación
 
