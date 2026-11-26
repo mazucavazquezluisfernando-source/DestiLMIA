@@ -441,48 +441,6 @@ Entre los archivos que genera el programa se encuentran los siguientes:
 
 Los archivos CSV permiten consultar los datos de cada análisis y también utilizarlos en otras herramientas.
 
-## Preguntas frecuentes
-
-### ¿Tengo que instalar todo cada vez que utilice DestiLMIA?
-
-No. Una vez preparado el entorno, puedo volver a activarlo y abrir el programa. Si cambio de computadora, tendré que preparar el entorno nuevamente.
-
-### ¿Necesito Internet para analizar un CSV nuevo?
-
-No, siempre que las bibliotecas y los modelos ya estén disponibles localmente.
-
-### ¿Puedo utilizar otras fuentes?
-
-Sí. El programa no necesita una lista fija de plataformas. La columna de fuentes debe identificar al menos una DMO y una fuente de usuarios.
-
-### ¿Puedo utilizar archivos de Excel?
-
-Primero necesito guardarlos como CSV. DestiLMIA no recibe directamente libros de Excel.
-
-### ¿Qué pasa si no reconoce una columna?
-
-Debo comprobar que los nombres que escribí coincidan con los encabezados del CSV y que haya seleccionado columnas diferentes para el texto y la fuente.
-
-### ¿Qué ocurre si no encuentra los modelos?
-
-Debo revisar que el entorno esté activo y preparar los modelos con `python setup_models.py`, utilizando Internet durante ese paso.
-
-### ¿Puedo utilizar pocos comentarios?
-
-Sí, pero algunos resultados pueden ser limitados. Cuando un grupo contiene menos de 15 documentos, el programa utiliza frecuencias de palabras en lugar de identificar comunidades para ese grupo.
-
-### ¿Puedo utilizar archivos grandes?
-
-En la interfaz puedo cargar CSV de hasta 30 MB. Desde la terminal no establecí ese límite, pero el tiempo necesario depende de la cantidad de documentos y de los recursos disponibles.
-
-### ¿Los resultados representan a todos los turistas?
-
-No necesariamente. Los resultados representan los textos incluidos en el análisis. Su interpretación depende del tamaño de la muestra y de cómo se reunieron los comentarios.
-
-### ¿Está comprobado en cualquier sistema operativo?
-
-No. He realizado las pruebas completas en macOS con Python 3.14.7. Las instrucciones de Windows y Linux permiten preparar el proyecto, pero su compatibilidad necesita verificarse en esos equipos.
-
 ## Cosas que hay que tener en cuenta
 
 Los resultados dependen mucho de los datos que se utilicen. Si una fuente tiene pocos comentarios o los textos no son representativos, esto puede afectar las comparaciones.
