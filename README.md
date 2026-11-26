@@ -416,31 +416,6 @@ Una parte importante de DestiLMIA es distinguir entre lo que calcula el programa
 
 Estas medidas permiten identificar relaciones y diferencias, pero las conclusiones deben considerar las características del conjunto de datos y los comentarios originales.
 
-## Resultados
-
-Cada vez que se realiza un análisis se crea una carpeta diferente dentro de:
-
-```text
-resultados/cli/
-```
-
-Las ejecuciones se guardan con nombres como `ejecucion_001`, `ejecucion_002` y así sucesivamente. De esta manera puedo consultar análisis anteriores sin sobrescribirlos.
-
-También guardo un archivo llamado `metadatos_analisis.json` con la fecha de ejecución, el título, las columnas utilizadas, la DMO, el idioma, la paleta y el estado de finalización.
-
-Entre los archivos que genera el programa se encuentran los siguientes:
-
-| Resultado | Archivos |
-|---|---|
-| Limpieza y documentos atípicos | `comentarios_limpios.csv`, `documentos_normales.csv`, `outliers.csv`, `ngramas_outliers.csv` |
-| Sentimientos | `sentimientos.csv`, `sentimientos_por_fuente.csv`, `comparacion_sentimientos_dmo_usuarios.csv` |
-| Temas | `topicos.csv`, `topicos_por_sentimiento.csv`, `palabras_clave_topicos.csv`, `comentarios_representativos_topicos.csv` |
-| Comparación entre fuentes | `alineacion_semantica.csv`, `resumen_temas_dmo_usuarios.csv`, `resumen_temas_por_fuente.csv`, `comparacion_tematica_dmo.csv`, `brechas_tematicas_dmo_usuarios.csv`, `presencia_tematica_dmo_usuarios.csv` |
-| Precio y valor | `precio_valor_similitudes.csv`, `precio_valor_resumen_fuentes.csv`, `precio_valor_cinco_cercanos.csv`, `precio_valor_distribucion_candidatos.csv`, `precio_valor_dmo_usuarios.csv`, `precio_valor_contexto_universos.csv` |
-| Visualizaciones | `dispersion_comentarios.html`, `topicos_por_sentimiento_scatter.html`, `distribuciones_dmo_usuarios.html`, `precio_valor_scatter.html` |
-
-Los archivos CSV permiten consultar los datos de cada análisis y también utilizarlos en otras herramientas.
-
 ## Cosas que hay que tener en cuenta
 
 Los resultados dependen mucho de los datos que se utilicen. Si una fuente tiene pocos comentarios o los textos no son representativos, esto puede afectar las comparaciones.
