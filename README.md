@@ -179,27 +179,7 @@ python main.py \
 
 Los datos de este ejemplo son ficticios y no representan la percepción real de los turistas que visitan Guanajuato.
 
-### Ejemplo de ejecución en inglés
-
-También incluí un conjunto sintético llamado Harborview, con una fuente oficial y dos fuentes de usuarios.
-
-| visitor_message | channel_id |
-|---|---|
-| Explore Harborview on foot and discover its restored maritime museum. | official_board |
-| The lighthouse view was breathtaking and the guide was wonderful. | visitor_reviews |
-| We had an excellent weekend exploring the harbor and its little streets. | community_forum |
-
-Para analizarlo puedo ejecutar este comando en una sola línea:
-
-```bash
-python main.py --csv data/pruebas/harborview_prueba_offline_60.csv --texto visitor_message --fuente channel_id --dmo official_board --idioma en --titulo "Harborview - English sample" --paleta viridis
-```
-
-El conjunto contiene 60 comentarios ficticios. Su finalidad es comprobar el funcionamiento del programa, no representar las opiniones reales de los turistas.
-
-También puedo utilizar las paletas `cividis`, `plasma` e `inferno`.
-
-En Windows es más sencillo copiar los comandos en una sola línea. En macOS y Linux puedo dividirlos en varias líneas utilizando una sola barra invertida al final de cada línea.
+DestiLMIA también permite analizar comentarios en inglés. Para hacerlo, selecciono `--idioma en` e indico las columnas y fuentes del archivo correspondiente.
 
 Estos son los siete parámetros necesarios para realizar un análisis:
 
@@ -527,7 +507,6 @@ El tiempo necesario para realizar un análisis aumenta conforme se trabaja con u
 - `src/`: contiene los módulos de procesamiento, modelos, comparaciones y visualizaciones.
 - `requirements.txt`: contiene las bibliotecas necesarias para ejecutar el proyecto.
 - `data/pruebas/guanajuato_sintetico_100.csv`: conjunto sintético en español.
-- `data/pruebas/harborview_prueba_offline_60.csv`: conjunto sintético en inglés.
 
 No incluí los modelos descargados, los entornos virtuales, los conjuntos de datos reales ni los resultados de mis análisis en el repositorio.
 
