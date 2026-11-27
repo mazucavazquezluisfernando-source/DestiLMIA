@@ -25,6 +25,8 @@ Organicé los archivos de manera que cada parte del programa tenga una función 
 | `requirements.txt` | Contiene las bibliotecas y sus versiones. |
 | `data/pruebas/` | Incluye un conjunto sintético que utilice para revisar el funcionamiento de la herramienta. |
 | `Herramienta` | Aquí incluyo 5 imágenes de la herramienta con el análisis del conjunto de prueba. |
+
+
 Los modelos descargados y los resultados de cada análisis se conservan localmente.
 
 ## Instalación
@@ -190,7 +192,7 @@ Licenciatura en Ingeniería de Datos e Inteligencia Artificial
 
 **Correo:** [mazucavazquezluisfernando@gmail.com](mailto:mazucavazquezluisfernando@gmail.com)
 
-Gracias por tu interés en DestiLMIA. Si tienes alguna pregunta sobre el funcionamiento o la metodología del proyecto, puedes comunicarte conmigo al correo indicado.
+Gracias por tu interés en DestiLMIA. Si tienes alguna pregunta sobre el proyecto, puedes comunicarte conmigo al correo.
 
 ### Referencia
 
