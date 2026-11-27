@@ -23,15 +23,15 @@ Organicé los archivos de manera que cada parte del programa tenga una función 
 | `src/` | Reúne los módulos de procesamiento, sentimientos, tópicos, comparaciones y visualizaciones. |
 | `setup_models.py` | Prepara los modelos necesarios para analizar los textos. |
 | `requirements.txt` | Contiene las bibliotecas y sus versiones. |
-| `data/pruebas/` | Incluye un conjunto de comentarios ficticios para conocer el funcionamiento del programa. |
+| `data/pruebas/` | Incluye un conjunto sintético que utilice para revisar el funcionamiento de la herramienta. |
 
 Los modelos descargados y los resultados de cada análisis se conservan localmente.
 
 ## Instalación
 
-DestiLMIA funciona desde una computadora con Python. La instalación inicial necesita conexión a Internet para obtener las bibliotecas y los modelos. Una vez disponibles, el análisis se realiza localmente, sin utilizar APIs externas.
+La instalación de esta herramienta necesita conexión a internet solo para obtener las bibliotecas y los modelos que aquelarres les digo. Una vez que están disponibles, el análisis se realiza localmente, sin utilizar APIs externas.
 
-He probado el proyecto en **macOS con Python 3.14.7**. También comparto instrucciones para Windows y Linux, aunque su funcionamiento completo todavía no se ha verificado en esos sistemas.
+He probado el proyecto en **macOS con Python 3.14.7**. Incluí instrucciones de instalación para Windows y Linux con la intención de facilitar su uso en otros equipos, aunque por el momento no he podido comprobar su funcionamiento en estos sistemas, ya que no cuento con acceso a alguno de ellos.
 
 ### 1. Obtener el proyecto
 
@@ -175,7 +175,8 @@ Organicé la interfaz en seis secciones para facilitar la exploración de la inf
 
 Las visualizaciones son interactivas y permiten consultar los comentarios y sus fuentes.
 
-Los resultados ayudan a identificar relaciones y diferencias, pero deben interpretarse considerando el contenido original y las características de los datos. Una similitud alta no representa necesariamente satisfacción, y una diferencia temática no implica por sí sola una experiencia negativa.
+Los resultados nos ayudan a identificar relaciones y diferencias, pero deben interpretarse considerando el contenido original y las características de los datos. Una similitud alta no representa necesariamente satisfacción, y una diferencia temática no implica por sí sola una experiencia negativa.
+
 
 ## Autor y contacto
 
@@ -189,7 +190,7 @@ Licenciatura en Ingeniería de Datos e Inteligencia Artificial
 
 **Correo:** [mazucavazquezluisfernando@gmail.com](mailto:mazucavazquezluisfernando@gmail.com)
 
-Gracias por tu interés en DestiLMIA. Si tienes alguna pregunta sobre el funcionamiento o la metodología del proyecto, puedes comunicarte conmigo mediante el correo indicado.
+Gracias por tu interés en DestiLMIA. Si tienes alguna pregunta sobre el funcionamiento o la metodología del proyecto, puedes comunicarte conmigo al correo indicado.
 
 ### Referencia
 
