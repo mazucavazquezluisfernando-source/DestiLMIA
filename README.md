@@ -6,7 +6,7 @@ Proyecto final de Visualización.
 
 ## Sobre el proyecto
 
-Desarrollé DestiLMIA para comparar la imagen turística que comunican las organizaciones de promoción de destinos (DMO) con las opiniones que los visitantes comparten en plataformas de reseñas y comunidades digitales.
+Desarrollé DestiLMIA para comparar la imagen turística que comunican las organizaciones de promoción de destinos (DMO) con las opiniones que los visitantes comparten en plataformas de reseñas y comunidades digitales. 
 
 El programa permite identificar los temas principales, analizar sentimientos, reconocer comentarios poco habituales y encontrar diferencias entre la comunicación oficial y las opiniones de los usuarios. También incluye un análisis de cómo se habla del precio y el valor de las experiencias turísticas.
 
