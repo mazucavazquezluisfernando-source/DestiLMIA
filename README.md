@@ -24,7 +24,7 @@ Organicé los archivos de manera que cada parte del programa tenga una función 
 | `setup_models.py` | Prepara los modelos necesarios para analizar los textos. |
 | `requirements.txt` | Contiene las bibliotecas y sus versiones. |
 | `data/pruebas/` | Incluye un conjunto sintético que utilice para revisar el funcionamiento de la herramienta. |
-
+| `Herramienta` | Aquí incluyo 5 imágenes de la herramienta con el análisis del conjunto de prueba. |
 Los modelos descargados y los resultados de cada análisis se conservan localmente.
 
 ## Instalación
